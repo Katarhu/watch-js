@@ -1,0 +1,68 @@
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.watch {
+    font-size: 20px;
+    width: 12em;
+    height: 12em;
+
+    border: 10px solid #000000;
+    border-radius: 50%;
+
+    position: relative;
+}
+
+.watch-dot {
+    font-size: 1em;
+    width: .85em;
+    height: .85em;
+    background: #000000;
+    border-radius: 50%;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 4;
+}
+
+:is(.watch-hours, .watch-minutes, .watch-seconds) {
+    position: absolute;
+    background: #000000;
+
+    border: 0.05em solid #ffffff;
+    border-radius: 1em;
+
+    height: 5em;
+    width: .6em;
+
+    top: 50%;
+    left: 50%;
+
+    --translate: translate(calc(-50%), calc(-50% - 2.5em));
+    --rotate: rotate(0);
+
+
+    transform: var(--translate) var(--rotate);
+    transform-origin: bottom center;
+}
+
+.watch-hours {
+    font-size: 1em;
+    z-index: 1;
+}
+
+.watch-minutes {
+    font-size: .75em;
+    z-index: 2;
+}
+
+.watch-seconds {
+    font-size: .45em;
+    z-index: 3;
+
+}
